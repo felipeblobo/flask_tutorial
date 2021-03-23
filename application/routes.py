@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, url_for
 from application import app
 from application.forms import LoginForm
 
@@ -26,5 +26,5 @@ def login():
         flash('Login requisitado para o usuário {}, rememberMe={}'.format(
             form.username.data, form.rememberMe.data
         ))
-        return redirect ('/index')
+        return redirect ('index')
     return render_template('login.html', title = 'Login', form = form)
